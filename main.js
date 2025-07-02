@@ -1,6 +1,3 @@
-import ReactDOM from "react-dom/client";
-import "./main.css";
-
 function App() {
   return React.createElement(
     "div",
