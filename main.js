@@ -1,76 +1,157 @@
 import React from "react";
-import "./App.css";
-
-function Header() {
-  return (
-    <header className="header">
-      <button className="icon-btn">
-        <img src="/menu_icon.png" alt="menu" className="icon-img" />
-      </button>
-      <div className="header-title">らくずみ</div>
-      <div style={{ width: 40 }}></div>
-    </header>
-  );
-}
-
-function SearchBar() {
-  return (
-    <div className="search-bar">
-      <img src="/search_icon.png" alt="search" className="icon-img" />
-      <input className="search-input" placeholder="検索" />
-    </div>
-  );
-}
-
-function ListItem({ index }) {
-  return (
-    <div className="list-item">
-      <img src="/item_icon.png" alt="item" className="item-icon" />
-      <div className="item-texts">
-        <div className="item-title">アイテムタイトル {index + 1}</div>
-        <div className="item-subtitle">サブタイトルや説明文が入ります</div>
-      </div>
-    </div>
-  );
-}
-
-function ItemList() {
-  return (
-    <div className="item-list">
-      {[...Array(10)].map((_, i) => (
-        <ListItem key={i} index={i} />
-      ))}
-    </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="footer">
-      <button className="icon-btn">
-        <img src="/home_icon.png" alt="home" className="icon-img" />
-      </button>
-      <button className="icon-btn">
-        <img src="/add_icon.png" alt="add" className="icon-img" />
-      </button>
-      <button className="icon-btn">
-        <img src="/user_icon.png" alt="user" className="icon-img" />
-      </button>
-    </footer>
-  );
-}
+import ReactDOM from "react-dom/client";
+import "./main.css";
 
 function App() {
-  return (
-    <div className="main-container">
-      <Header />
-      <SearchBar />
-      <div className="scroll-area">
-        <ItemList />
-      </div>
-      <Footer />
-    </div>
+  return React.createElement(
+    "div",
+    { className: "app-bg" },
+    // AppBar
+    React.createElement(
+      "header",
+      { className: "app-bar" },
+      React.createElement(
+        "button",
+        { className: "icon-btn" },
+        React.createElement("img", {
+          src: "./public/assets/icons/icon_menu.svg",
+          alt: "menu",
+        })
+      ),
+      React.createElement(
+        "div",
+        { className: "app-bar-title" },
+        "RAKUZUMI"
+      ),
+      React.createElement(
+        "div",
+        { className: "app-bar-avatar" },
+        React.createElement("img", {
+          src: "./public/assets/images/avatar.png",
+          alt: "avatar",
+        })
+      )
+    ),
+    // Select a field
+    React.createElement(
+      "section",
+      { className: "select-field-section" },
+      React.createElement(
+        "div",
+        { className: "select-field-card" },
+        React.createElement(
+          "div",
+          { className: "select-field-card-left" },
+          React.createElement("img", {
+            src: "./public/assets/icons/icon_map.svg",
+            alt: "map",
+            className: "icon-map",
+          }),
+          React.createElement(
+            "span",
+            { className: "select-field-label" },
+            "Select  a  field"
+          )
+        ),
+        React.createElement("img", {
+          src: "./public/assets/icons/icon_arrow_right.svg",
+          alt: "arrow",
+          className: "icon-arrow",
+        })
+      )
+    ),
+    // Actions
+    React.createElement(
+      "section",
+      { className: "actions-section" },
+      React.createElement(
+        "div",
+        { className: "actions-title" },
+        "Actions"
+      ),
+      // 1行目
+      React.createElement(
+        "div",
+        { className: "actions-cards-row" },
+        React.createElement(
+          "div",
+          { className: "actions-card" },
+          React.createElement("img", {
+            src: "./public/assets/images/opn02.png",
+            alt: "OPN-02",
+            className: "actions-card-img",
+          }),
+          React.createElement(
+            "div",
+            { className: "actions-card-label" },
+            "Measure"
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "actions-card" },
+          React.createElement("img", {
+            src: "./public/assets/images/tpo07b.png",
+            alt: "TPO-07-B",
+            className: "actions-card-img",
+          }),
+          React.createElement(
+            "div",
+            { className: "actions-card-label" },
+            "Setup"
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "actions-card" },
+          React.createElement("img", {
+            src: "./public/assets/images/opn02_2.png",
+            alt: "OPN-02",
+            className: "actions-card-img",
+          }),
+          React.createElement(
+            "div",
+            { className: "actions-card-label" },
+            "aaaaa"
+          )
+        )
+      ),
+      // 2行目
+      React.createElement(
+        "div",
+        { className: "actions-cards-row" },
+        React.createElement(
+          "div",
+          { className: "actions-card" },
+          React.createElement("img", {
+            src: "./public/assets/images/tpo07b2.png",
+            alt: "TPO-07-B",
+            className: "actions-card-img",
+          }),
+          React.createElement(
+            "div",
+            { className: "actions-card-label" },
+            "Setup"
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "actions-card" },
+          React.createElement("img", {
+            src: "./public/assets/images/opn02_2.png",
+            alt: "OPN-02",
+            className: "actions-card-img",
+          }),
+          React.createElement(
+            "div",
+            { className: "actions-card-label" },
+            "aaaaa"
+          )
+        )
+      )
+    )
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(React.createElement(App)); 
